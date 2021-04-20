@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContactsComponent } from './contacts/contacts.component';
 import { HomeComponent } from './home/home.component';
 import {AuthComponent } from './auth/auth.component';
+import { DashProprietaireComponent } from './dash-proprietaire/dash-proprietaire.component';
 
 const routes: Routes = [
   {path:"Home",component: HomeComponent},
-  {path:"Contacts", component: ContactsComponent},
-  {path:"Auth", component: AuthComponent}
+  {path:"contacts", component: DashProprietaireComponent},
+  {path:"Auth", component: AuthComponent},
+ 
 
 
 ];
