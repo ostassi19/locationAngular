@@ -20,6 +20,7 @@ import { SidebareComponent } from './sidebare/sidebare.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
+import { MaisonComponent } from './maison/maison.component';
 //import {MatSidenavModule} from '@angular/material/sidenav';
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {MatDividerModule} from '@angular/material/divider';
     ProfileProprietaireComponent,
     ProductComponent,
     DashProprietaireComponent,
-    SidebareComponent
+    SidebareComponent,
+    MaisonComponent
   ],
   imports: [
     BrowserModule,
