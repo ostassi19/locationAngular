@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -13,7 +12,16 @@ import { CompteComponent } from './compte/compte.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfileProprietaireComponent } from './profile-proprietaire/profile-proprietaire.component';
 import { ProductComponent } from './product/product.component';
-
+import { DashProprietaireComponent } from './dash-proprietaire/dash-proprietaire.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import { SidebareComponent } from './sidebare/sidebare.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDividerModule} from '@angular/material/divider';
+import { MaisonComponent } from './maison/maison.component';
+//import {MatSidenavModule} from '@angular/material/sidenav';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,11 +34,21 @@ import { ProductComponent } from './product/product.component';
     CompteComponent,
     NotFoundComponent,
     ProfileProprietaireComponent,
-    ProductComponent
+    ProductComponent,
+    DashProprietaireComponent,
+    SidebareComponent,
+    MaisonComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatDividerModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
