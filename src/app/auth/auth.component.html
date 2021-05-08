@@ -43,9 +43,12 @@
                 <!--begin::Title-->
 
                 <!--begin::Form group-->
+                <div class=" alert alert-danger" *ngIf="erreur==1">
+                    <strong>Login ou mot de passe erronés...</strong>
+                </div>
                 <div class="form-group">
-                    <label class="font-size-h6 font-weight-bolder text-dark">Email</label>
-                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="text" name="email" autocomplete="off" />
+                    <label class="font-size-h6 font-weight-bolder text-dark">Username</label>
+                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="text" name="username" autocomplete="off" [(ngModel)]="user.username" />
                 </div>
                 <!--end::Form group-->
 
@@ -59,13 +62,13 @@
                         </a>
                     </div>
 
-                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="password" name="password" autocomplete="off" />
+                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="password" name="password" autocomplete="off"  [(ngModel)]="user.password"/>
                 </div>
                 <!--end::Form group-->
 
                 <!--begin::Action-->
                 <div class="pb-lg-0 pb-5">
-                    <button type="submit" id="kt_login_signin_submit" class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3" (click)="redirectToDashP()">Sign In</button>
+                    <button type="submit" id="kt_login_signin_submit" (click)="onLoggedin()" class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3" >Sign In</button>
 
                     <button type="button" class="btn btn-light-primary font-weight-bolder px-8 py-4 my-3 font-size-lg">
                         <span class="svg-icon svg-icon-md"><!--begin::Svg Icon | path:assets/media/svg/social-icons/google.svg--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">

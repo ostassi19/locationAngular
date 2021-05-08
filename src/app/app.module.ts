@@ -21,6 +21,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import { MaisonComponent } from './maison/maison.component';
+import { GarrageComponent } from './garrage/garrage.component';
+import { StudioComponent } from './studio/studio.component';
+import { AppartementComponent } from './appartement/appartement.component';
+import { TerrainComponent } from './terrain/terrain.component';
+import {FormsModule} from '@angular/forms';
+import { AddMaisonComponent } from './add-maison/add-maison.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+
 //import {MatSidenavModule} from '@angular/material/sidenav';
 @NgModule({
   declarations: [
@@ -37,7 +45,13 @@ import { MaisonComponent } from './maison/maison.component';
     ProductComponent,
     DashProprietaireComponent,
     SidebareComponent,
-    MaisonComponent
+    MaisonComponent,
+    GarrageComponent,
+    StudioComponent,
+    AppartementComponent,
+    TerrainComponent,
+    AddMaisonComponent,
+    ForbiddenComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +62,7 @@ import { MaisonComponent } from './maison/maison.component';
     MatToolbarModule,
     MatSidenavModule,
     MatDividerModule,
+    FormsModule,
     
   ],
   providers: [],
