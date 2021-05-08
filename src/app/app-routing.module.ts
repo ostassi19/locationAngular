@@ -7,9 +7,9 @@ import { DashProprietaireComponent } from './dash-proprietaire/dash-proprietaire
 import {ProductComponent} from './product/product.component';
 
 const routes: Routes = [
-  {path:"",component: ProductComponent},
+  {path:'', component: ProductComponent},
   {path:"contacts", component: DashProprietaireComponent},
-  {path:"Auth", component: AuthComponent},
+  {path:"login", component: AuthComponent},
 ];
 
 @NgModule({
