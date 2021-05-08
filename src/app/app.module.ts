@@ -21,7 +21,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import { MaisonComponent } from './maison/maison.component';
-//import {MatSidenavModule} from '@angular/material/sidenav';
+import {FormsModule} from "@angular/forms";
+import {AuthService} from "./services/auth.service";
+import {HttpClientModule} from "@angular/common/http";
+import { CommentaireComponent } from './commentaire/commentaire.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbdRatingTemplateModule} from "./rating/rating-template.module";
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,9 +42,11 @@ import { MaisonComponent } from './maison/maison.component';
     ProductComponent,
     DashProprietaireComponent,
     SidebareComponent,
-    MaisonComponent
+    MaisonComponent,
+    CommentaireComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -48,7 +55,9 @@ import { MaisonComponent } from './maison/maison.component';
     MatToolbarModule,
     MatSidenavModule,
     MatDividerModule,
-    
+    FormsModule,
+    NgbModule,
+    NgbdRatingTemplateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

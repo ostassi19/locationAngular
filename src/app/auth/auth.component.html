@@ -34,38 +34,37 @@
         <!--begin::Signin-->
         <div class="login-form login-signin">
             <!--begin::Form-->
-            <form class="form" novalidate="novalidate" id="kt_login_signin_form"  >
+            <form class="form" novalidate="novalidate" id="kt_login_signin_form" #authForm="ngForm"
+                  (ngSubmit)="onSubmit(authForm)" >
                 <!--begin::Title-->
                 <div class="pb-13 pt-lg-0 pt-5">
                     <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Welcome to RentalHome</h3>
                     <span class="text-muted font-weight-bold font-size-h4">New Here? <a href="javascript:;" id="kt_login_signup" class="text-primary font-weight-bolder">Create an Account</a></span>
                 </div>
                 <!--begin::Title-->
-
+              <div class="pb-13 pt-lg-0 pt-5">
                 <!--begin::Form group-->
                 <div class="form-group">
                     <label class="font-size-h6 font-weight-bolder text-dark">Email</label>
-                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="text" name="email" autocomplete="off" />
+                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="text" name="username"
+                           autocomplete="off" ngModel required/>
                 </div>
                 <!--end::Form group-->
 
                 <!--begin::Form group-->
                 <div class="form-group">
-                    <div class="d-flex justify-content-between mt-n5">
-                        <label class="font-size-h6 font-weight-bolder text-dark pt-5">Password</label>
-
-                        <a href="javascript;" class="text-primary font-size-h6 font-weight-bolder text-hover-primary pt-5" id="kt_login_forgot">
-                            Forgot Password ?
-                        </a>
-                    </div>
-
-                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="password" name="password" autocomplete="off" />
+                  <label class="font-size-h6 font-weight-bolder text-dark">Password</label>
+                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg"
+                           type="password" name="password" autocomplete="off" ngModel required
+                           minlength="6"/>
                 </div>
                 <!--end::Form group-->
-
+              </div>
+                <div class="pb-13 pt-lg-0 pt-5">
+              <div class="d-flex justify-content-between mt-n5"></div>
                 <!--begin::Action-->
                 <div class="pb-lg-0 pb-5">
-                    <button type="submit" id="kt_login_signin_submit" class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3" (click)="redirectToDashP()">Sign In</button>
+                    <button type="submit" id="kt_login_signin_submit" class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3" (click)="onSwitchMode()" [disabled]="!authForm.valid">Sign In</button>
 
                     <button type="button" class="btn btn-light-primary font-weight-bolder px-8 py-4 my-3 font-size-lg">
                         <span class="svg-icon svg-icon-md"><!--begin::Svg Icon | path:assets/media/svg/social-icons/google.svg--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -77,6 +76,7 @@
                     </button>
                 </div>
                 <!--end::Action-->
+                </div>
             </form>
             <!--end::Form-->
         </div>
