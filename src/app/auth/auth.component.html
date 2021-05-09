@@ -44,6 +44,9 @@
                 <!--begin::Title-->
               <div class="pb-13 pt-lg-0 pt-5">
                 <!--begin::Form group-->
+                <div class=" alert alert-danger" *ngIf="erreur==1">
+                    <strong>Login ou mot de passe erronés...</strong>
+                </div>
                 <div class="form-group">
                     <label class="font-size-h6 font-weight-bolder text-dark">Email</label>
                     <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="text" name="username"

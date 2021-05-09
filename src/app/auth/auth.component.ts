@@ -9,6 +9,10 @@ import {AuthService} from "../services/auth.service";
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
+  
+//user= new User();
+erreur=0;
+ // constructor(private authService:AuthService,private router: Router) { }
 
   constructor(
     public router: Router,
@@ -24,7 +28,7 @@ export class AuthComponent implements OnInit {
   }
   // tslint:disable-next-line:typedef
   redirectToDashP(){
-    this.router.navigateByUrl('/contacts');
+    this.router.navigateByUrl('maison');
   }
   onSubmit(form: NgForm){
     console.log(form.value);
@@ -44,4 +48,22 @@ export class AuthComponent implements OnInit {
     form.reset();
   }
 
+  /*
+onLoggedin(){
+  console.log(this.user);
+  let isValidUser: Boolean = this.authService.SignIn(this.user);
+  if(isValidUser){
+    if(this.authService.isAdmin()){
+      this.router.navigate(['/maison']);
+      
+    }
+    else{
+      this.router.navigate(['/']);
+     }
+  }
+  else{ 
+    this.erreur=1;
+  }
+}
+*/
 }

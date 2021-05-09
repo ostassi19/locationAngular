@@ -10,6 +10,9 @@
         <li class="nav-item active">
           <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
         </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/maison" *ngIf="authService.isAdmin()">Gestion logement <span class="sr-only"></span></a>
+        </li>
         
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -19,6 +22,8 @@
             <a class="dropdown-item" href="#">Terrain</a>
             <a class="dropdown-item" href="#">maison</a>
             <a class="dropdown-item" href="#">appartement</a>
+            <a class="dropdown-item" href="#">Garrage</a>
+            <a class="dropdown-item" href="#">Studio</a>
            
           </div>
         </li>
@@ -33,7 +38,18 @@
       </ul>
     
       <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item"><a class="nav-link" routerLink="/Auth"><span class="glyphicon glyphicon-user"></span> Compte</a></li>
+       
+       <li> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{authService.loggedUser}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" *ngIf="authService.isLoggedIn">profile</a>
+          <a class="dropdown-item" (click)="onLogOut()" *ngIf="authService.isLoggedIn">logout</a>
+          <a class="dropdown-item"  *ngIf="!authService.isLoggedIn" routerLink="Auth">s'inscrire/s'enregistrer</a>
+          
+         
+        </div>
+      </li>
         <li class="nav-item">
           <a class="nav-link" href="#">contacts</a>
         </li>

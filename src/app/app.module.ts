@@ -27,6 +27,14 @@ import {HttpClientModule} from "@angular/common/http";
 import { CommentaireComponent } from './commentaire/commentaire.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {NgbdRatingTemplateModule} from "./rating/rating-template.module";
+import { GarrageComponent } from './garrage/garrage.component';
+import { StudioComponent } from './studio/studio.component';
+import { AppartementComponent } from './appartement/appartement.component';
+import { TerrainComponent } from './terrain/terrain.component';
+import { AddMaisonComponent } from './add-maison/add-maison.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+
+//import {MatSidenavModule} from '@angular/material/sidenav';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +52,12 @@ import {NgbdRatingTemplateModule} from "./rating/rating-template.module";
     SidebareComponent,
     MaisonComponent,
     CommentaireComponent,
+    GarrageComponent,
+    StudioComponent,
+    AppartementComponent,
+    TerrainComponent,
+    AddMaisonComponent,
+    ForbiddenComponent
   ],
   imports: [
     HttpClientModule,
@@ -58,6 +72,7 @@ import {NgbdRatingTemplateModule} from "./rating/rating-template.module";
     FormsModule,
     NgbModule,
     NgbdRatingTemplateModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
