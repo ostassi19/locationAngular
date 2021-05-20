@@ -1,8 +1,91 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
 
-<div class="card">
-    <img src="img_avatar.png" alt="Avatar" style="width:100%">
-    <div class="container">
-      <h4><b>John Doe</b></h4>
-      <p>Architect & Engineer</p>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 20px;">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" routerLink="/maison">Maison <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/studio">Studio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/terrain">Terrain</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/garrage">Garrage</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/appartement">Appartement</a>
+            </li>
+
+
+
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/">demandes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/"> <span class="glyphicon glyphicon-envelope"></span> les messages</a>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="panel-body">
+      <div class="row ">
+        <div class="col-md-4" *ngFor="let maison of Maisons">
+          <div class="card shadow" style="width:20rem; margin-right: 10px; ">
+                  <img class="card-img-top" src="assets/images/13.jpg" alt="Card image cap" >
+              <div class="card-body text-center">
+                <h5 class="card-title">{{ maison.description }}</h5>
+                <p class="card-text">{{maison.prixlocation}} DTCarthage, Tunis - Location - Maison - 120 m²maison meublée climatisée et composée d'un salon, 2 chambres à coucher, salle de bain, cuisine et un jardin avec une entrée indépendante. la maison se trouve au centre de sidi bou said donc à proximité de 3 banques, une boulangerie, une pâtisserie, 2 pharmacies, un magasin général, le marché municipal et enfin à 10 minutes à pied de la plage12 mars 2021 sur Tunisie-annonce</p>
+
+               <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-primary" style=" margin-right: 5px; " data-toggle="modal" data-target="#myModal2"
+                        (click)="open(maison)">Détail </button>
+                <button type="button" class="btn btn-primary" style=" margin-right: 5px; " data-toggle="modal" data-target="#myModal">suprimer </button>
+                <button type="button" class="btn btn-primary" style=" margin-right: 5px; " data-toggle="modal" data-target="#myModal">Modifier </button>
+
+              </div>
+            </div>
+      </div>
+      </div>
+
+  </div>
+    <div class="panel-footer" style="text-align: center;">
+      <button type="button" class="btn btn-primary" (click)="redirectTo()" >Ajouter un nouveau</button>
     </div>
   </div>
+</div>
+<div class="modal" id="myModal2" *ngIf="Maison != null">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">{{Maison.description}}</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body" style="width: auto">
+        <p class="text-justify">
+          The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters
+          <img src="assets/images/1/7.jpg" style="width: 100%;">
+        </p>
+        <ngbd-rating-template [Maison]="Maison"></ngbd-rating-template>
+        <app-commentaire [Maison]="Maison"></app-commentaire>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn w3-flat-sun-flower" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
