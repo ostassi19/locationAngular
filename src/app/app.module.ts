@@ -28,7 +28,8 @@ import { TerrainComponent } from './terrain/terrain.component';
 import {FormsModule} from '@angular/forms';
 import { AddMaisonComponent } from './add-maison/add-maison.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
-
+//import{} from '@agm/core' ; 
+//import { GoogleMapsModule } from '@angular/google-maps'
 //import {MatSidenavModule} from '@angular/material/sidenav';
 @NgModule({
   declarations: [
@@ -63,7 +64,9 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
     MatSidenavModule,
     MatDividerModule,
     FormsModule,
-    
+   
+   // GoogleMapsModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
