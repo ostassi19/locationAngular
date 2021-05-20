@@ -72,7 +72,7 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
     FormsModule,
     NgbModule,
     NgbdRatingTemplateModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

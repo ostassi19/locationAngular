@@ -1,5 +1,4 @@
-<div class="page-content page-container" id="page-content">
-  <div class="padding">
+<div class="page-content" id="page-content">
     <div class="row container d-flex justify-content-center">
       <div class="col-md-15">
         <div class="box box-widget">
@@ -7,18 +6,7 @@
             <div class="box-comment">
               <img class="img-circle img-sm" src="https://img.icons8.com/office/36/000000/person-female.png" alt="User Image">
               <div class="comment-text">
-                <span class="username"> Tina Domiaz
-                  <span class="text-muted pull-right">8:03 PM Today
-                  </span>
-                </span> {{comments.comm}}
-              </div>
-            </div>
-          </div>
-          <div class="box-footer box-comments" *ngFor="let comments of Comentaires">
-            <div class="box-comment">
-              <img class="img-circle img-sm" src="https://img.icons8.com/office/36/000000/person-female.png" alt="User Image">
-              <div class="comment-text">
-                <span class="username"> {{user.username}}
+                <span class="username"> {{comments.client.Nom}} {{comments.client.prenom}}
                   <span class="text-muted pull-right">{{comments.createdAt | date:'MMM d, y, h:mm a'}}
                   </span>
                 </span> {{comments.comm}}
@@ -38,5 +26,4 @@
         </div>
       </div>
     </div>
-  </div>
 </div>
