@@ -2,10 +2,10 @@
         <div class="col-12 col-md-12 col-lg-6 card" >
             <div class="row">
                 <div class="col-12 col-md-12 col-lg-6" >
-                   <img src="assets/images/1/5.jpg" style="width: 100%;">
+                   <img src="assets/images/1/5.jpg" style="width: 100%;" id="myimage">
                 </div>
                 <div class="col-12 col-md-12 col-lg-6">
-                   ù<img src="assets/images/1/1.jpg" style="width: 45%;">
+                   <img src="assets/images/1/1.jpg" style="width: 45%;">
                    <img src="assets/images/1/2.jpg" style="width: 45%;">
                    <img src="assets/images/1/3.jpg" style="width: 45%;">
                    <img src="assets/images/1/4.jpg" style="width: 45%;">
@@ -36,7 +36,7 @@
                                      The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
                                      <img src="assets/images/1/5.jpg" style="width: 100%;">
                                  </p>
-                           <ngbd-rating-template> </ngbd-rating-template>
+                           <!--<ngbd-rating-template> </ngbd-rating-template>-->
                         </div>
 
                          <app-commentaire></app-commentaire>
@@ -101,3 +101,13 @@
           </div>
 
 
+          <script>
+            $('#myimage').imagezoomsl({
+            zoomrange: [1,12],
+            zoomstart: 4,
+            innerzoom: true,
+            magnifierborder: 'none'
+            });
+
+
+                 </script>

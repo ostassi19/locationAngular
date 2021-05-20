@@ -1,5 +1,6 @@
 .container {
-  margin-bottom: 500px
+  /*margin-bottom: 500px*/
+  box-sizing: border-box;
 }
 
 .stretch-card>.card {

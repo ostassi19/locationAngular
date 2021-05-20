@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {CommentaireService} from "../services/commentaire.service";
 import {CommentaireModels} from "../models/commentaire.model";
 import {Router} from "@angular/router";
@@ -11,10 +11,12 @@ import {AuthService} from "../services/auth.service";
 })
 export class CommentaireComponent implements OnInit {
 
+  @Input() Maison : any;
   Comentaires: CommentaireModels[]=[];
   moncommentire="";
   postComment=[];
-
+  private u: string | null = window.localStorage.getItem('user');
+  User = JSON.parse(this.u? this.u :'');
   constructor(
     public router: Router,
     public commentaireService: CommentaireService,
@@ -32,15 +34,20 @@ export class CommentaireComponent implements OnInit {
     // @ts-ignore
     this.postComment.push(this.moncommentire);
     const c = this.createComm();
-    this.commentaireService.createCommentaire({comm: this.moncommentire, utilisateur: user.username}).subscribe();
+    console.log(this.Maison);
+    this.commentaireService.createCommentaire(
+      {comm: this.moncommentire, utilisateur: user.username, client: '/api/clients/'+this.User.idClient, maison: this.Maison['@id']}).subscribe(
+      res => {
+        this.getAllCommentaire();
+      }
+    );
 
-    this.moncommentire='';
   }
 
   getAllCommentaire(){
-    this.commentaireService.getCommentaire().subscribe(
+    this.commentaireService.getCommentaire('maison.id='+this.Maison.id).subscribe(
       comment=>{
-        this.Comentaires = comment ['hydra:member'];
+        this.Comentaires = comment['hydra:member'];
       }
 
     )

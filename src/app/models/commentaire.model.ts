@@ -3,4 +3,5 @@ export class CommentaireModels{
   comm: string | undefined;
   createdAt: string | undefined;
   utilisateur: string | undefined;
+  client: any;
 }

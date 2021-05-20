@@ -1,9 +1,13 @@
 <p>Notes et avis</p>
 
-<ngb-rating [(rate)]="currentRate">
+<ngb-rating [(rate)]="currentRate" (rateChange)="createRate()" [readonly]="currentRate > 0">
   <ng-template let-fill="fill" let-index="index">
     <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
   </ng-template>
 </ngb-rating>
 <hr>
-<pre>Rate: <b>{{currentRate}}</b></pre>
+<pre>score des avis  <b>{{pourcentage | number : '1.2-2'}}</b> / 10</pre>
+<!--<div *ngFor="let rate of Ratings" >
+  <h6> {{ rate.score }}</h6>
+</div>-->
+
